@@ -54,7 +54,22 @@ public class PlayerCtrl : MonoBehaviour
         }
         else if (v <= -0.1f)
         {
-            
+            //후진
+            anim.CrossFade(playerAnim.runBackward.name, 0.25f);
+        }
+        else if (h >= 0.1f)
+        {
+            //오른쪽 
+            anim.CrossFade(playerAnim.runRight.name, 0.25f);
+        }
+        else if (h <= -0.1f)
+        {
+            //왼쪽
+            anim.CrossFade(playerAnim.runLeft.name, 0.25f);
+        }
+        else
+        {
+            anim.CrossFade(playerAnim.idle.name, 0.25f);
         }
     }
 
