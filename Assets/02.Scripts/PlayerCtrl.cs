@@ -30,12 +30,6 @@ public class PlayerCtrl : MonoBehaviour
         anim.Play(playerAnim.idle.name);
     }
 
-    // 화면을 렌더링하는 주기 (60fps)
-    // 최적화 
-    // 60fps , 1/60 sec, 불규칙하다.
-    /*
-        Vector3 a = (x, y, z)
-    */
     void Update()
     {
         float v = Input.GetAxis("Vertical");//up, down, w, s  // -1.0f ~ 0.0f ~ +1.0f
@@ -49,11 +43,19 @@ public class PlayerCtrl : MonoBehaviour
         transform.Translate(dir.normalized * Time.deltaTime * moveSpeed);
         //회전로직
         transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * r);
+    }
 
-        // transform.Translate(Vector3.forward * 0.1f * v);
-        // transform.Translate(Vector3.right * 0.1f * h);
-
-
+    void PlayAnimation(float v, float h)
+    {
+        if (v >= 0.1f)
+        {
+            //전진 애니메이션 클립
+            anim.CrossFade(playerAnim.runForward.name, 0.25f);
+        }
+        else if (v <= -0.1f)
+        {
+            
+        }
     }
 
     /* 정규화 벡터, 단위 벡터, Normalized Vector, Unit Vector (크기가 1인 벡터)
