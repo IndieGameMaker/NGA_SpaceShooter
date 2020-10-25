@@ -26,8 +26,11 @@ public class PlayerCtrl : MonoBehaviour
 
         Debug.Log($"v={v}/ h={h}"); /// Debug.Log("v="+v+"/ "+"h="+h);
 
+        //이동로직
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
         transform.Translate(dir.normalized * 0.1f);
+        //회전로직
+        transform.Rotate(Vector3.up * 10.0f * r);
 
         // transform.Translate(Vector3.forward * 0.1f * v);
         // transform.Translate(Vector3.right * 0.1f * h);
