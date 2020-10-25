@@ -2,15 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]   //클래스 타입의 변수를 인스펙터에 노출(객체 직렬화)
+public class PlayerAnim
+{
+    public AnimationClip idle;
+    public AnimationClip runForward;
+    public AnimationClip runBackward;
+    public AnimationClip runLeft;
+    public AnimationClip runRight;
+}
+
+
 public class PlayerCtrl : MonoBehaviour
 {
     public float moveSpeed = 8.0f;
     public float turnSpeed = 80.0f;
+    public PlayerAnim playerAnim;
+
+    public Animation anim;
+
+    //public float m_age = 10;
 
     // 1번 호출되는 함수 (자동 호출)
     void Start()
     {
-        
+        anim = this.gameObject.GetComponent<Animation>();
     }
 
     // 화면을 렌더링하는 주기 (60fps)
