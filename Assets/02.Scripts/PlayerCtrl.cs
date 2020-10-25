@@ -22,10 +22,12 @@ public class PlayerCtrl : MonoBehaviour
     {
         float v = Input.GetAxis("Vertical");//up, down, w, s  // -1.0f ~ 0.0f ~ +1.0f
         float h = Input.GetAxis("Horizontal");//Left, Right, A, D // -1.0f ~ 0.0f ~ +1.0f
+        float r = Input.GetAxis("Mouse X");
+
         Debug.Log($"v={v}/ h={h}"); /// Debug.Log("v="+v+"/ "+"h="+h);
 
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
-        transform.Translate(dir.normalized * 0.3f);
+        transform.Translate(dir.normalized * 0.1f);
 
         // transform.Translate(Vector3.forward * 0.1f * v);
         // transform.Translate(Vector3.right * 0.1f * h);
