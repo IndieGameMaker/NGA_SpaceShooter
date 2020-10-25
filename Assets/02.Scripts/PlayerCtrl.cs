@@ -27,6 +27,7 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         anim = this.gameObject.GetComponent<Animation>();
+        anim.Play("Idle");
     }
 
     // 화면을 렌더링하는 주기 (60fps)
