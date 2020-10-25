@@ -20,8 +20,14 @@ public class PlayerCtrl : MonoBehaviour
     */
     void Update()
     {
+        float v = Input.GetAxis("Vertical");//up, down, w, s  // -1.0f ~ 0.0f ~ +1.0f
+        Debug.Log("v=" + v);
+
         //transform.position += new Vector3(0, 0, 0.1f);
         transform.Translate(Vector3.forward * 0.1f);
+
+
+
     }
 
     /* 정규화 벡터, 단위 벡터, Normalized Vector, Unit Vector (크기가 1인 벡터)
