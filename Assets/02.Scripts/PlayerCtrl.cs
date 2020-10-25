@@ -43,6 +43,8 @@ public class PlayerCtrl : MonoBehaviour
         transform.Translate(dir.normalized * Time.deltaTime * moveSpeed);
         //회전로직
         transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * r);
+
+        PlayAnimation(v, h);
     }
 
     void PlayAnimation(float v, float h)
