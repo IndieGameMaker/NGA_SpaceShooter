@@ -28,9 +28,9 @@ public class PlayerCtrl : MonoBehaviour
 
         //이동로직
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
-        transform.Translate(dir.normalized * 0.1f);
+        transform.Translate(dir.normalized * Time.deltaTime * 8.0f);
         //회전로직
-        transform.Rotate(Vector3.up * 10.0f * r);
+        transform.Rotate(Vector3.up * 80.0f * Time.deltaTime * r);
 
         // transform.Translate(Vector3.forward * 0.1f * v);
         // transform.Translate(Vector3.right * 0.1f * h);
