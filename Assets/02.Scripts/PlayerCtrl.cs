@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-
+    public float moveSpeed = 8.0f;
+    public float turnSpeed = 80.0f;
 
     // 1번 호출되는 함수 (자동 호출)
     void Start()
@@ -28,9 +29,9 @@ public class PlayerCtrl : MonoBehaviour
 
         //이동로직
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
-        transform.Translate(dir.normalized * Time.deltaTime * 8.0f);
+        transform.Translate(dir.normalized * Time.deltaTime * moveSpeed);
         //회전로직
-        transform.Rotate(Vector3.up * 80.0f * Time.deltaTime * r);
+        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * r);
 
         // transform.Translate(Vector3.forward * 0.1f * v);
         // transform.Translate(Vector3.right * 0.1f * h);
