@@ -19,7 +19,7 @@ public class PlayerCtrl : MonoBehaviour
     public float turnSpeed = 80.0f;
     public PlayerAnim playerAnim;
 
-    public Animation anim;
+    private Animation anim;
 
     //public float m_age = 10;
 
