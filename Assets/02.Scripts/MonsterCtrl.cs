@@ -25,6 +25,16 @@ public class MonsterCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(playerTr.position);
+        if (Vector3.Distance(monsterTr.position, playerTr.position) <= 2.0f)
+        {
+            agent.isStopped = true;
+            anim.SetBool("IsAttack", true);
+        }
+        else
+        {
+            agent.isStopped = false;
+            agent.SetDestination(playerTr.position);
+            anim.SetBool("IsAttack", false);
+        }
     }
 }
