@@ -11,6 +11,7 @@ public class BarrelCtrl : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("BULLET"))
         {
+            //hitCount = hitCount + 1;
             if (++hitCount == 3)
             {
                 //드럼통 폭발효과
@@ -21,6 +22,8 @@ public class BarrelCtrl : MonoBehaviour
 
     void ExpBarrel()
     {
-        
+        Rigidbody rb = this.gameObject.AddComponent<Rigidbody>();
+        rb.AddForce(Vector3.up * 1800.0f);
+        Destroy(this.gameObject, 2.0f);        
     }
 }
