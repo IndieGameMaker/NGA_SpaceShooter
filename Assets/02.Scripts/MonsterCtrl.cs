@@ -17,6 +17,9 @@ public class MonsterCtrl : MonoBehaviour
         playerTr = GameObject.FindGameObjectWithTag("PLAYER").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         anim  = GetComponent<Animator>();
+
+        agent.SetDestination(playerTr.position);
+        anim.SetBool("IsTrace", true);
     }
 
     // Update is called once per frame
