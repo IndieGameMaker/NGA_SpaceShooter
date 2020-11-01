@@ -36,7 +36,7 @@ public class PlayerCtrl : MonoBehaviour
         float h = Input.GetAxis("Horizontal");//Left, Right, A, D // -1.0f ~ 0.0f ~ +1.0f
         float r = Input.GetAxis("Mouse X");
 
-        Debug.Log($"v={v}/ h={h}"); /// Debug.Log("v="+v+"/ "+"h="+h);
+        //Debug.Log($"v={v}/ h={h}"); /// Debug.Log("v="+v+"/ "+"h="+h);
 
         //이동로직
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
