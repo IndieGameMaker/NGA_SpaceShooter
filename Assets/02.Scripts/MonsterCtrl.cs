@@ -38,12 +38,20 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
+    private int hp = 100;
+
     void OnCollisionEnter(Collision coll)
     {
         if (coll.gameObject.CompareTag("BULLET"))
         {
             Destroy(coll.gameObject);
-            
+            anim.SetTrigger("Hit");
+
+            hp -= 20;
+            if (hp <= 0)
+            {
+                Debug.Log("Monster Die !!");
+            }
         }
     }
 }
