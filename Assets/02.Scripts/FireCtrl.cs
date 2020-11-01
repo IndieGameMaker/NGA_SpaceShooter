@@ -6,10 +6,13 @@ public class FireCtrl : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePos;
-    
+    public AudioClip fireSfx;
+
+    private AudioSource audio;
+
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();    
     }
 
     // Update is called once per frame
@@ -18,6 +21,7 @@ public class FireCtrl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+            audio.PlayOneShot(fireSfx, 0.8f);
         }
     }
 }
