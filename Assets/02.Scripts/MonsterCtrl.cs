@@ -37,4 +37,13 @@ public class MonsterCtrl : MonoBehaviour
             anim.SetBool("IsAttack", false);
         }
     }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.CompareTag("BULLET"))
+        {
+            Destroy(coll.gameObject);
+            
+        }
+    }
 }
